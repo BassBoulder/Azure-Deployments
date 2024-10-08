@@ -18,7 +18,6 @@ SAS = '<SAS KEY>'
 # ENCODING PREPERATION
 #################
 FileAndSAS = (f'{ContainerFile}?{SAS}')
-
 EncodedRoot = urllib.parse.quote(ContainerRoot)
 EncodedFileAndSAS = urllib.parse.quote(FileAndSAS)
 ReplacedEncodedRoot = EncodedRoot.replace("/", "%2F")
