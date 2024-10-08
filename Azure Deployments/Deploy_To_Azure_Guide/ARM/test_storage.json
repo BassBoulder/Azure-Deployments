@@ -1,0 +1,70 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "resources": [
+    {
+      "type": "Microsoft.Storage/storageAccounts",
+      "apiVersion": "2022-05-01",
+      "name": "[concat(parameters('storageAccountNamePrefix'), '1')]",
+      "location": "[resourceGroup().location]",
+      "sku": {
+        "name": "[parameters('storageAccountType')]"
+      },
+      "kind": "StorageV2",
+      "properties": {}
+    },
+    {
+      "type": "Microsoft.Storage/storageAccounts",
+      "apiVersion": "2022-05-01",
+      "name": "[concat(parameters('storageAccountNamePrefix'), '2')]",
+      "location": "[resourceGroup().location]",
+      "sku": {
+        "name": "[parameters('storageAccountType')]"
+      },
+      "kind": "StorageV2",
+      "properties": {}
+    }
+  ],
+  "parameters": {
+    "storageAccountNamePrefix": {
+      "type": "string",
+      "defaultValue": "stracct",
+      "metadata": {
+        "description": "Prefix for the storage account names"
+      }
+    },
+    "storageAccountType": {
+      "type": "string",
+      "defaultValue": "Standard_LRS",
+      "allowedValues": [
+        "Premium_LRS",
+        "Standard_LRS",
+        "Standard_GRS"
+      ],
+      "metadata": {
+        "description": "Type of the storage account"
+      }
+    },
+    "tags": {
+      "type": "object",
+      "defaultValue": {
+        "Environment": "Production",
+        "Department": "IT"
+      },
+      "metadata": {
+        "description": "Tags to be applied to the resources"
+      }
+    }
+  },
+  "variables": {},
+  "outputs": {
+    "storageAccountName1": {
+      "type": "string",
+      "value": "[concat(parameters('storageAccountNamePrefix'), '1')]"
+    },
+    "storageAccountName2": {
+      "type": "string",
+      "value": "[concat(parameters('storageAccountNamePrefix'), '2')]"
+    }
+  }
+}
