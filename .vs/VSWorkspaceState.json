@@ -1,11 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\Azure Deployments",
-    "\\Azure Deployments\\Deploy_To_Azure_Guide",
-    "\\Azure Deployments\\Deploy_To_Azure_Guide\\ADO to GitHub Sync PROD ONLY",
-    "\\Azure Deployments\\Deploy_To_Azure_Guide\\Wiki"
+    ""
   ],
-  "SelectedNode": "\\Azure Deployments\\Deploy_To_Azure_Guide\\ADO to GitHub Sync PROD ONLY\\SyncADOtoGitHub.yml",
+  "SelectedNode": "\\C:\\Users\\NickElgar\\Source\\Repos\\BassBoulder\\Azure-Deployments",
   "PreviewInSolutionExplorer": false
 }
